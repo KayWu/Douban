@@ -46,6 +46,7 @@ public class MainActivity extends FragmentActivity {
             pager.setCurrentItem(0);
         }
     }
+
     private class PagerAdapter extends FragmentPagerAdapter {
 
         private final String[] TITLES = getResources().getStringArray(R.array.pager_name);
@@ -62,7 +63,12 @@ public class MainActivity extends FragmentActivity {
         @Override
         public Fragment getItem(int position) {
             Bundle bundle = new Bundle();
-            Fragment pagerFragment = new PagerFragment();
+            Fragment pagerFragment;
+            if (position == 0) {
+                pagerFragment = new ListRefreshFragment();
+            } else {
+                pagerFragment = new PagerFragment();
+            }
             bundle.putInt("page_num", position);
             pagerFragment.setArguments(bundle);
             return pagerFragment;

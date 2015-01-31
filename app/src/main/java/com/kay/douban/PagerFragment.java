@@ -15,10 +15,12 @@ public class PagerFragment extends android.support.v4.app.Fragment {
     private int pageNum;
     private TextView tv;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View pager = inflater.inflate(R.layout.pager_fragment, container, false);
+
         tv = (TextView) pager.findViewById(R.id.tv);
         if (savedInstanceState == null) {
             Bundle bundle = getArguments();
@@ -28,5 +30,4 @@ public class PagerFragment extends android.support.v4.app.Fragment {
         return pager;
 
     }
-
 }
