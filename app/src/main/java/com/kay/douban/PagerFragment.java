@@ -22,12 +22,11 @@ public class PagerFragment extends android.support.v4.app.Fragment {
         View pager = inflater.inflate(R.layout.pager_fragment, container, false);
 
         tv = (TextView) pager.findViewById(R.id.tv);
-        if (savedInstanceState == null) {
-            Bundle bundle = getArguments();
-            pageNum = bundle.getInt("page_num");
-            tv.setText("" + pageNum);
-        }
+        Bundle bundle = getArguments();
+        pageNum = bundle.getInt("page_num");
+        tv.setText("" + pageNum);
         return pager;
-
     }
+
+
 }
